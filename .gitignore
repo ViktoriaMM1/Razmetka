@@ -1,0 +1,8 @@
+Lib
+Scripts
+.idea
+Bash_asr/manage_asr/static/manage_asr/audio_file/*
+Bash_asr/manage_asr/static/manage_asr/canvas_arr/
+__pycache__
+share
+Bash_asr/db.sqlite3

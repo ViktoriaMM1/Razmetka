@@ -1,0 +1,52 @@
+{% extends "manage_asr/master.html" %}
+
+{% block title %}
+  Һомай
+{% endblock %}
+
+
+{% block content %}
+
+<main class="container">
+  <div class="bg-body-tertiary p-5 rounded">
+    <h1>Тейәлгән аудио-файылдар</h1>
+    <div class="clue">
+      <h3 class="c1"><i class="fa fa-battery-quarter" aria-hidden="true" style="color:red; font-size: 100%;" ></i> - эшләнмәгән</h3>
+      <h3 class="c1"><i class="fa fa-battery-half" aria-hidden="true" style="color:blue; font-size: 100%;"></i> - эшләнеп бөтөлмәгән</h3>
+      <h3 class="c1"><i class="fa fa-battery-full" aria-hidden="true" style="color:green; font-size: 100%;"></i> - эшләнеп бөтөлгән</h3>
+    </div>
+    <p class="lead">
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Исеме</th>
+      <th scope="col">Статус</th>
+      <th scope="col">Ҡасан тейәлгән</th>
+      <th scope="col">Һуңғы үҙгәртеү</th>
+      <th scope="col">Үҙгәртеү</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+  {% for i in data %}
+    <tr>
+      <td>{{i.id}}</td>
+      <td>{{i.name}}</td>
+      <td>{% if i.status == 0 %}
+                <i class="fa fa-battery-quarter" aria-hidden="true" style="color:red; font-size: 170%;" ></i>
+          {% elif i.status == 1 %}
+                <i class="fa fa-battery-half" aria-hidden="true" style="color:blue; font-size: 170%;"></i>
+          {% elif i.status == 2 %}
+                <i class="fa fa-battery-full" aria-hidden="true" style="color:green; font-size: 170%;"></i>
+          {% endif %}</td>
+      <td>{{i.created|time:"H:i:s"}} {{i.created|date:"d.m.Y"}}</td>
+      <td>{{i.updated|time:"H:i:s"}} {{i.updated|date:"d.m.Y"}}</td>
+      <td><a class="nav-link active btn btn-lg btn-primary" href="/edit/{{i.id}}" >Ҡарарға</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+    </p>
+  </div>
+</main>
+{% endblock %}

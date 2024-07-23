@@ -1,0 +1,39 @@
+{% extends "manage_asr/master.html" %}
+
+{% block title %}
+    Һомай
+{% endblock %}
+
+
+{% block content %}
+  <main class="container">
+  <div class="bg-body-tertiary p-5 rounded">
+    <h1>Кәрәкле аудио-файылды һайлап, тейәгеҙ</h1>
+    <p class="lead">
+    <form action="{% url 'index' %}" enctype="multipart/form-data" method="post">
+        <p><label for="btn1" class="btn btn-lg btn-primary">Аудио-файыл һайларға</label>
+        <input type="file" name="uploadedFile" accept="audio/*"  id="btn1" class="btn" onchange="showSelectedFile(event)"  style="display:none">
+        {% csrf_token %}
+        <label for="btn2" class="btn btn-lg btn-primary">Аудио файылды тейәргә</label>
+        <input type="submit" value="Отправить" id="btn2" class="btn" style="display: none">
+        <div id="selected-file-info"></div>
+        </p>
+    </form>
+    </p>
+
+  </div>
+  <script>
+      function showSelectedFile(event) {
+          const input = event.target;
+          const selectedFileInfo = document.getElementById('selected-file-info');
+
+          if (input.files && input.files[0]) {
+            selectedFileInfo.innerHTML = `Һайланған аудио-файл: ${input.files[0].name}`;
+          } else {
+            selectedFileInfo.innerHTML = 'Файл не выбран';
+          }
+      }
+
+  </script>
+</main>
+{% endblock %}

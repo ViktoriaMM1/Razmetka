@@ -1,0 +1,84 @@
+.text1 {
+    cursor: text;
+    line-height:25px;
+    height: 40px;
+    max-height: 40px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    text-align: center;
+    background-color: green;
+    color: white;
+    position: absolute;
+    transition: transform 0.3s ease;
+
+}
+
+.input-field {
+    display: none;
+}
+
+.inner-div {
+    height: 50px;
+    width: 6000px; /* Ширина 3000px */
+    position: relative; /* Необходимо для использования свойства left */
+    left: -600px; /* Смещение влево на 500px */
+}
+.clue{
+    display: flex;
+}
+
+.c1{
+    margin: 10px;
+}
+
+#audio{
+    display: none;
+}
+#win{
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+
+#myCanvas{
+    margin-left: auto;
+    margin-right: auto;
+}
+body {
+  overflow-x: hidden;
+}
+
+#control{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#butt{
+    margin:5px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: #0d6efd;
+    color: white;
+}
+
+#sbutt{
+    margin:5px;
+    width: 50px;
+    border-radius: 20px;
+    background-color: #0d6efd;
+    color: white;
+}
+
+#pause{
+    margin:5px;
+    width: 50px;
+    border-radius: 20px;
+    background-color: #0d6efd;
+    color: white;
+}
+
+#nonebutt{
+    display: none;
+}
